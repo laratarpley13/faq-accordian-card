@@ -39,6 +39,7 @@ h1, h2 {
     background: white;
     border-radius: 2rem;
     max-width: 56rem;
+    padding: 2.875rem 1.5rem;
     background-image: url('./images/bg-pattern-mobile.svg');
     background-repeat: no-repeat;
     background-position: center 0%;
@@ -93,28 +94,51 @@ h1, h2 {
     text-align: left;
 }
 
-.accordion_question.open {
-    font-weight: 700;
-}
-
 .accordion_question::after {
     content: '';
     display: block;
     width: 0.625rem;
     height: 1rem;
+    border: none;
     background-image: url('./images/icon-arrow-down.svg');
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
+    transition: transform 300ms ease-in-out;
+}
+
+.accordion_question:focus, .accordion_question:focus-visible {
+    border: none;
+    outline: none;
+}
+
+.accordion_question.open {
+    font-weight: 700;
+}
+
+.accordion_question.open::after {
+    transform: rotate(180deg);
 }
 
 .accordion_content {
     font-size: 0.75rem;
     line-height: 1.4;
     margin-bottom: 1rem;
+}
+
+.accordion_collapse.collapse {
+    display: none;
+}
+
+.accordion_collapse.collapsing {
 
 }
 
+.accordion_collapse.open {
+    display: block;
+}
+
+/* DESKTOP STYLES */
 @media (min-width: 56em) {
     body {
         padding: 5rem;
@@ -124,7 +148,7 @@ h1, h2 {
         position: relative;
         display: flex;
         margin: 0 auto;
-        padding: 4.375rem 6.25rem 4.375 0;
+        padding: 4.375rem 6.25rem 4.375rem 0rem;
         background-image: url(./images/bg-pattern-desktop.svg);
         background-size: 45%;
         background-position: -13% center;
