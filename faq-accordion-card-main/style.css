@@ -123,7 +123,11 @@ h1, h2 {
 .accordion_content {
     font-size: 0.75rem;
     line-height: 1.4;
-    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+}
+
+.accordion_collapse {
+    transition: height 300ms ease;
 }
 
 .accordion_collapse.collapse {
@@ -131,7 +135,8 @@ h1, h2 {
 }
 
 .accordion_collapse.collapsing {
-
+    height: 0;
+    overflow: hidden;
 }
 
 .accordion_collapse.open {
@@ -186,33 +191,10 @@ h1, h2 {
     }
 }
 
-
-/* .attribution { 
+.attribution { 
     font-size: 11px; text-align: center; 
 }
+
 .attribution a { 
     color: hsl(228, 45%, 44%); 
 }
-
-.accordion {
-    background-color: #eee;
-    color: #444;
-    cursor: pointer;
-    padding: 18px;
-    width: 100%;
-    text-align: left;
-    border: none;
-    outline: none;
-    transition: 0.4s;
-}
-
-.active, .accordion:hover {
-    background-color: #ccc;
-}
-
-.answer {
-    padding: 0 18px;
-    background-color: white;
-    display: none;
-    overflow: hidden;
-} */
